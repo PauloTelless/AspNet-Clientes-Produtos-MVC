@@ -1,0 +1,27 @@
+﻿@model Cliente
+
+<form asp-controller="Cliente" asp-action="PostCliente">
+    <div class="form-group">
+        <label for="formGroupExampleInput">Nome</label>
+        <input type="text" asp-for=Nome class="form-control" id="formGroupExampleInput" placeholder="Digite o seu nome">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Nome de usuário</label>
+        <input type="text" asp-for=NomeUsuario class="form-control" id="formGroupExampleInput2" placeholder="Digite o nome de usuário">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Email</label>
+        <input type="text" asp-for=Email class="form-control" id="formGroupExampleInput2" placeholder="Digite o email">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Contato</label>
+        <input type="text" asp-for=Contato class="form-control" id="formGroupExampleInput2" placeholder="Digite o contato">
+    </div>
+
+    <div class="text-center">
+        <div class="btn" role="button" aria-label="Basic example">
+            <button type="submit" class="btn btn-success">Criar cliente</button>
+            <a role="button" asp-controller="Cliente" asp-action="Index" class="btn btn-primary">Voltar</a>
+        </div>
+    </div>          
+</form>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Cliente>
+
+<div class="text-center">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Nome de usuário</th>
+            <th scope="col">Email</th>
+            <th scope="col">Contato</th>
+            <th scope="col">Ver produtos</th>
+            <th scope="col">Operações</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var cliente in Model)
+            {
+                <tr>
+                    <th scope="row">@cliente.ClienteId</th>
+                    <td>@cliente.Nome</td>
+                    <td>@cliente.NomeUsuario</td>
+                    <td>@cliente.Email</td>
+                    <td>@cliente.Contato</td>
+                    <td><a role="button">Ver produtos</a></td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Editar</button>
+                        <button type="button" class="btn btn-danger">Excluir</button>
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
+</div>
+<div class="text-center">
+    <div class="btn" role="button" aria-label="Basic example">
+        <a role="button" asp-controller="Cliente" asp-action="CriarCliente" class="btn btn-success">Criar cliente</a>
+        <a role="button" asp-controller="Home" asp-action="Index" class="btn btn-primary">Voltar</a>
+    </div>
+</div>
