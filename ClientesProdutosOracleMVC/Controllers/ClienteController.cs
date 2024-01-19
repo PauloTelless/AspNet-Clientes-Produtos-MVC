@@ -39,7 +39,6 @@ public class ClienteController : Controller
                 Cliente = cliente,
                 Produtos = produtos
             },
-            // Adicione mais instâncias conforme necessário
     };
 
         return View(viewModelList);

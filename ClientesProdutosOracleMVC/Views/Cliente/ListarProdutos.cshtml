@@ -5,10 +5,11 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">Id Cliente</th>
-                <th scope="col">Nome Cliente</th>
                 <th scope="col">Id Produto</th>
-                <th scope="col">Nome Produto</th>
+                <th scope="col">Nome do produto</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Preço do produto</th>
+                <th scope="col">Descrição do produto</th>
                 <th scope="col">Operações</th>
             </tr>
         </thead>
@@ -18,10 +19,11 @@
                 foreach (var produto in clienteProdutoViewModel.Produtos)
                 {
                     <tr>
-                        <td>@clienteProdutoViewModel.Cliente.ClienteId</td>
-                        <td>@clienteProdutoViewModel.Cliente.Nome</td>
                         <td>@produto.ProdutoId</td>
                         <td>@produto.NomeProduto</td>
+                        <td>@produto.Categoria</td>
+                        <td>@produto.PrecoProduto</td>
+                        <td>@produto.DescricaoProduto</td>
                         <td>
                             <button type="button" class="btn btn-primary">Editar</button>
                             <button type="button" class="btn btn-danger">Excluir</button>
