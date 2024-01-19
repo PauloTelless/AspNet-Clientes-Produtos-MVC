@@ -1,0 +1,40 @@
+﻿@using ClientesProdutosOracleMVC.ViewModels
+@model IEnumerable<ClienteProdutoViewModel>
+
+<div class="text-center">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id Cliente</th>
+                <th scope="col">Nome Cliente</th>
+                <th scope="col">Id Produto</th>
+                <th scope="col">Nome Produto</th>
+                <th scope="col">Operações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var clienteProdutoViewModel in Model)
+            {
+                foreach (var produto in clienteProdutoViewModel.Produtos)
+                {
+                    <tr>
+                        <td>@clienteProdutoViewModel.Cliente.ClienteId</td>
+                        <td>@clienteProdutoViewModel.Cliente.Nome</td>
+                        <td>@produto.ProdutoId</td>
+                        <td>@produto.NomeProduto</td>
+                        <td>
+                            <button type="button" class="btn btn-primary">Editar</button>
+                            <button type="button" class="btn btn-danger">Excluir</button>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<div class="text-center">
+    <div class="btn" role="button" aria-label="Basic example">
+        <a role="button" asp-controller="Cliente" asp-action="Index" class="btn btn-success">Criar produto</a>
+        <a role="button" asp-controller="Cliente" asp-action="Index" class="btn btn-primary">Voltar</a>
+    </div>
+</div>

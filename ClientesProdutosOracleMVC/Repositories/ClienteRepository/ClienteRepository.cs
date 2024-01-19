@@ -21,7 +21,14 @@ public class ClienteRepository : ICliente
         return cliente;
     }
 
-    public IEnumerable<Cliente> ListarClientes()
+    public Cliente EncontrarIdCliente(int id)
+    {
+        var clienteId = _context.Clientes.FirstOrDefault(x => x.ClienteId == id);
+
+        return clienteId;
+    }
+
+    IEnumerable<Cliente> ICliente.ListarClientes()
     {
         var clientes = _context.Clientes.ToList();
 

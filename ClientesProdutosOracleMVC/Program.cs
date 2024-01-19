@@ -1,6 +1,7 @@
 using ClientesProdutosOracleMVC.Context;
 using ClientesProdutosOracleMVC.Repositories.ClienteRepository;
 using ClientesProdutosOracleMVC.Repositories.Interfaces;
+using ClientesProdutosOracleMVC.Repositories.ProdutoRepository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,8 @@ var oracleConnection = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<AppDbContext>(options => options.UseOracle(oracleConnection));
 
 builder.Services.AddScoped<ICliente, ClienteRepository>();
+
+builder.Services.AddScoped<IProduto, ProdutoRepository>();
 
 var app = builder.Build();
 
