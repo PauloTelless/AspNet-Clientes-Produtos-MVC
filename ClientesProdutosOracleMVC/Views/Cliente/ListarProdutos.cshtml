@@ -1,6 +1,10 @@
 ﻿@using ClientesProdutosOracleMVC.ViewModels
 @model IEnumerable<ClienteProdutoViewModel>
 
+@{
+    int clienteId = 0; // Defina o valor inicial ou o valor padrão apropriado
+}
+
 <div class="text-center">
     <table class="table table-striped">
         <thead>
@@ -16,10 +20,11 @@
         <tbody>
             @foreach (var clienteProdutoViewModel in Model)
             {
+                clienteId = clienteProdutoViewModel.Cliente.ClienteId;
                 foreach (var produto in clienteProdutoViewModel.Produtos)
                 {
                     <tr>
-                        <td>@produto.ProdutoId</td>
+                        <td>@produto.ProdutoId</td>     
                         <td>@produto.NomeProduto</td>
                         <td>@produto.Categoria</td>
                         <td>@produto.PrecoProduto.ToString("C")</td>
@@ -27,7 +32,6 @@
                         <td>
                             <button type="button" class="btn btn-primary">Editar</button>
                             <button type="button" class="btn btn-danger">Excluir</button>
-                            
                         </td>
                     </tr>
                 }
@@ -35,7 +39,7 @@
         </tbody>
     </table>
     <div class="text-center">
-        <a role="button" asp-controller="Produto" asp-action="CriarProduto" class="btn btn-success">Criar produto</a>
+        <a role="button" asp-controller="Produto" asp-action="CriarProduto" asp-route-id="@clienteId">Criar produto</a>
         <a role="button" asp-controller="Cliente" asp-action="Index" class="btn btn-primary">Voltar</a>
     </div>
 </div>

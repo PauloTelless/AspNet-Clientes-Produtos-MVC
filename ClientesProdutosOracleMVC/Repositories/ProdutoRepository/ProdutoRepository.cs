@@ -11,10 +11,29 @@ public class ProdutoRepository : IProduto
     {
         _context = context;
     }
+
+    public Produto AdicionarProduto(int id,Produto produto)
+    {
+        produto.ClienteId = id;
+
+        _context.Add(produto);
+
+        _context.SaveChanges();
+
+        return produto;
+    }
+
     public IEnumerable<Produto> ObterProdutosDoCliente(int id)
     {
         return _context.Produtos
             .Where(x => x.ClienteId == id)
             .ToList();
+    }
+
+    public Produto EncontrarIdClienteProduto(int id)
+    {
+        var clienteProdutoId = _context.Produtos.FirstOrDefault(x => x.ClienteId == id);
+
+        return clienteProdutoId;
     }
 }

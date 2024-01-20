@@ -1,0 +1,28 @@
+﻿@model Produto
+
+<form asp-controller="Produto" asp-action="PostProduto" method="post">
+    <input type="hidden" asp-for="ClienteId" value="@ViewBag.ClienteId" />
+    <div class="form-group">
+        <label for="formGroupExampleInput">Nome</label>
+        <input type="text" asp-for=NomeProduto class="form-control" id="formGroupExampleInput" placeholder="Digite o nome do produto">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Categoria</label>
+        <input type="text" asp-for=Categoria class="form-control" id="formGroupExampleInput2" placeholder="Digite a categoria do produto">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Preço do produto</label>
+        <input type="text" asp-for=PrecoProduto class="form-control" id="formGroupExampleInput2" placeholder="Digite o preço do produto">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Descrição do produto</label>
+        <input type="text" asp-for=DescricaoProduto class="form-control" id="formGroupExampleInput2" placeholder="Digite uma breve descrição do produto">
+    </div>
+
+    <div class="text-center">
+        <div class="btn" role="button" aria-label="Basic example">
+            <button type="submit" class="btn btn-success">Criar cliente</button>
+            <a role="button" asp-controller="Cliente" asp-action="Index" class="btn btn-primary">Voltar</a>
+        </div>
+    </div>
+</form>
