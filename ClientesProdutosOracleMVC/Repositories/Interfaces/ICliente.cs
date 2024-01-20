@@ -7,4 +7,5 @@ public interface ICliente
     Cliente AdicionarCliente(Cliente cliente);
     Cliente EncontrarIdCliente(int id);
     IEnumerable<Cliente> ListarClientes();
+    Cliente EditarCliente(Cliente cliente);
 }

@@ -21,6 +21,17 @@ public class ClienteRepository : ICliente
         return cliente;
     }
 
+    public Cliente EditarCliente(Cliente cliente)
+    {
+        var clienteid = EncontrarIdCliente(cliente.ClienteId);
+
+        _context.Clientes.Entry(clienteid).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+
+        _context.SaveChanges();
+
+        return cliente;
+    }
+
     public Cliente EncontrarIdCliente(int id)
     {
         var clienteId = _context.Clientes.FirstOrDefault(x => x.ClienteId == id);

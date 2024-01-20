@@ -1,0 +1,29 @@
+﻿@model Cliente
+<h1>@Model.Nome</h1>
+<form asp-controller="Cliente" asp-action="PutCliente">
+
+    <div class="form-group">
+        <input type="hidden" asp-for="ClienteId" />
+        <label for="formGroupExampleInput">Nome</label>
+        <input type="text" asp-for=Nome class="form-control" id="formGroupExampleInput">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Nome de usuário</label>
+        <input type="text" asp-for=NomeUsuario class="form-control" id="formGroupExampleInput2">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Email</label>
+        <input type="text" asp-for=Email class="form-control" id="formGroupExampleInput2">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Contato</label>
+        <input type="text" asp-for=Contato class="form-control" id="formGroupExampleInput2">
+    </div>
+
+    <div class="text-center">
+        <div class="btn" role="button" aria-label="Basic example">
+            <button type="submit" class="btn btn-success">Editar cliente</button>
+            <a role="button" asp-controller="Cliente" asp-action="Index" class="btn btn-primary">Voltar</a>
+        </div>
+    </div>
+</form>

@@ -12,9 +12,9 @@ public class ProdutoRepository : IProduto
         _context = context;
     }
 
-    public Produto AdicionarProduto(int id,Produto produto)
+    public Produto AdicionarProduto(int Clienteid, Produto produto)
     {
-        produto.ClienteId = id;
+        produto.ClienteId = Clienteid;
 
         _context.Add(produto);
 

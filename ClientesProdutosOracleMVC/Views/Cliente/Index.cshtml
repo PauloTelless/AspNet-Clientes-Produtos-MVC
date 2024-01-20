@@ -24,7 +24,7 @@
                     <td>@cliente.Contato</td>
                     <td><a role="button" asp-controller="Cliente" asp-action="ListarProdutos" asp-route-id="@cliente.ClienteId">Ver produtos</a></td>
                     <td>
-                        <button type="button" class="btn btn-primary">Editar</button>
+                        <a role="button" asp-controller="Cliente" asp-action="EditarCliente" asp-route-id="@cliente.ClienteId" class="btn btn-primary">Editar</a>
                         <button type="button" class="btn btn-danger">Excluir</button>
                     </td>
                 </tr>
