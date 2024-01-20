@@ -6,5 +6,6 @@ public interface IProduto
 {
     IEnumerable<Produto> ObterProdutosDoCliente(int id);
     Produto AdicionarProduto(int Clienteid, Produto produto);
-    Produto EncontrarIdClienteProduto(int id);
+    Produto EncontradIdProduto(int id);
+    Produto EditarProduto(Produto produto);
 }

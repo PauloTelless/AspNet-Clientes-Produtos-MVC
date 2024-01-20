@@ -1,0 +1,29 @@
+﻿@model Produto
+<h1>@Model.NomeProduto</h1>
+<form asp-controller="Produto" asp-action="PutProduto">
+
+    <div class="form-group">
+        <input type="hidden" asp-for="ProdutoId" />
+        <label for="formGroupExampleInput">Nome do produto</label>
+        <input type="text" asp-for=NomeProduto class="form-control" id="formGroupExampleInput">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Categoria</label>
+        <input type="text" asp-for=Categoria class="form-control" id="formGroupExampleInput2">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Preço</label>
+        <input type="text" asp-for=PrecoProduto class="form-control" id="formGroupExampleInput2">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Descrição do produto</label>
+        <input type="text" asp-for=DescricaoProduto class="form-control" id="formGroupExampleInput2">
+    </div>
+
+    <div class="text-center">
+        <div class="btn" role="button" aria-label="Basic example">
+            <button type="submit" class="btn btn-success">Editar produto</button>
+            <a role="button" asp-controller="Cliente" asp-action="ListarProdutos" class="btn btn-primary">Voltar</a>
+        </div>
+    </div>
+</form>

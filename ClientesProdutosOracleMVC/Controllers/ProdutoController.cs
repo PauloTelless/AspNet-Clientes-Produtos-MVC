@@ -24,6 +24,13 @@ public class ProdutoController : Controller
         return View();
     }
 
+    public IActionResult EditarProduto(int id)
+    {
+        var produto = _produtoRepositorio.EncontradIdProduto(id);
+
+        return View(produto);
+    }
+
     [HttpPost]
     public IActionResult PostProduto(int Clienteid, Produto produto)
     {
@@ -31,5 +38,13 @@ public class ProdutoController : Controller
 
         return RedirectToAction("Index", "Cliente");
     }
+
+    [HttpPost]
+    public IActionResult PutProduto(Produto produto)
+    {
+        _produtoRepositorio.EditarProduto(produto);
+
+        return RedirectToAction("Index", "Cliente");
+    } 
 
 }
