@@ -22,7 +22,7 @@
                     <td>@cliente.NomeUsuario</td>
                     <td>@cliente.Email</td>
                     <td>@cliente.Contato</td>
-                    <td><a role="button" asp-controller="Cliente" asp-action="ListarProdutos" asp-route-id="@cliente.ClienteId">Ver produtos</a></td>
+                    <td><a role="button" asp-controller="Cliente" asp-action="ListarProdutos" asp-route-id="@cliente.ClienteId" style="text-decoration: none; color: black">Ver produtos</a></td>
                     <td>
                         <a role="button" asp-controller="Cliente" asp-action="EditarCliente" asp-route-id="@cliente.ClienteId" class="btn btn-primary">Editar</a>
                         <a role="button" asp-controller="Cliente" asp-action="DeletarCliente" asp-route-id="@cliente.ClienteId" class="btn btn-danger">Excluir</a>

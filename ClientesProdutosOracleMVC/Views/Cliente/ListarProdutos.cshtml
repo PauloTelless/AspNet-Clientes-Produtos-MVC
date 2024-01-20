@@ -2,7 +2,7 @@
 @model IEnumerable<ClienteProdutoViewModel>
 
 @{
-    int clienteId = 0; // Defina o valor inicial ou o valor padrão apropriado
+    int clienteId = 0;
 }
 
 <div class="text-center">
@@ -31,7 +31,7 @@
                         <td class="">@produto.DescricaoProduto</td>
                         <td>
                             <a role="button" asp-controller="Produto" asp-action="EditarProduto" asp-route-id="@produto.ProdutoId" class="btn btn-primary">Editar</a>
-                            <a role="button" class="btn btn-danger">Excluir</a>
+                            <a role="button" asp-controller="Produto" asp-action="DeletarProduto" asp-route-id="@produto.ProdutoId" class="btn btn-danger">Excluir</a>
                         </td>
                     </tr>
                 }
@@ -39,7 +39,7 @@
         </tbody>
     </table>
     <div class="text-center">
-        <a role="button" asp-controller="Produto" asp-action="CriarProduto" asp-route-id="@clienteId">Criar produto</a>
+        <a role="button" asp-controller="Produto" asp-action="CriarProduto" style="text-decoration: none;" asp-route-id="@clienteId">Criar produto</a>
         <a role="button" asp-controller="Cliente" asp-action="Index" class="btn btn-primary">Voltar</a>
     </div>
 </div>

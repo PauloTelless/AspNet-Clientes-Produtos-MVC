@@ -23,22 +23,19 @@ public class ProdutoRepository : IProduto
         return produto;
     }
 
+    public bool DeletarProduto(int id)
+    {
+        var produtoId = EncontradIdProduto(id);
+
+        _context.Produtos.Remove(produtoId);    
+
+        _context.SaveChanges();
+
+        return true;
+    }
+
     public Produto EditarProduto(Produto produto)
     {
-        //Cliente clienteDb = EncontrarId(cliente.ClienteId);
-
-        
-
-        //clienteDb.Nome = cliente.Nome;
-        //clienteDb.Email = cliente.Email;
-        //clienteDb.Celular = cliente.Celular;
-        //clienteDb.Empresa = cliente.Empresa;
-
-        //_context.Update(clienteDb);
-
-        //_context.SaveChanges();
-
-        //return clienteDb;
 
         Produto produtoDb = EncontradIdProduto(produto.ProdutoId);
 

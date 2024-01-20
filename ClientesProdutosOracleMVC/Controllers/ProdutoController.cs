@@ -31,6 +31,13 @@ public class ProdutoController : Controller
         return View(produto);
     }
 
+    public IActionResult DeletarProduto(int id)
+    {
+        Produto produto = _produtoRepositorio.EncontradIdProduto(id);
+
+        return View(produto);
+    }
+
     [HttpPost]
     public IActionResult PostProduto(int Clienteid, Produto produto)
     {
@@ -45,6 +52,12 @@ public class ProdutoController : Controller
         _produtoRepositorio.EditarProduto(produto);
 
         return RedirectToAction("Index", "Cliente");
-    } 
+    }
 
+    public IActionResult DeleteProduto(int id)
+    {
+        _produtoRepositorio.DeletarProduto(id);
+
+        return RedirectToAction("Index", "Cliente");
+    }
 }

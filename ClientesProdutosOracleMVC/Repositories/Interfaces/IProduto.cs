@@ -8,4 +8,5 @@ public interface IProduto
     Produto AdicionarProduto(int Clienteid, Produto produto);
     Produto EncontradIdProduto(int id);
     Produto EditarProduto(Produto produto);
+    bool DeletarProduto(int id);
 }
