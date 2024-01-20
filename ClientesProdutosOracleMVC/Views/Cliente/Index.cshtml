@@ -25,7 +25,7 @@
                     <td><a role="button" asp-controller="Cliente" asp-action="ListarProdutos" asp-route-id="@cliente.ClienteId">Ver produtos</a></td>
                     <td>
                         <a role="button" asp-controller="Cliente" asp-action="EditarCliente" asp-route-id="@cliente.ClienteId" class="btn btn-primary">Editar</a>
-                        <button type="button" class="btn btn-danger">Excluir</button>
+                        <a role="button" asp-controller="Cliente" asp-action="DeletarCliente" asp-route-id="@cliente.ClienteId" class="btn btn-danger">Excluir</a>
                     </td>
                 </tr>
             }

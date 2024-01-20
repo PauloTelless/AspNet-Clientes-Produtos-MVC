@@ -21,6 +21,17 @@ public class ClienteRepository : ICliente
         return cliente;
     }
 
+    public bool DeletarCliente(int id)
+    {
+        Cliente cliente = EncontrarIdCliente(id);
+
+        _context.Clientes.Remove(cliente);
+
+        _context.SaveChanges();
+
+        return true;
+    }
+
     public Cliente EditarCliente(Cliente cliente)
     {
         var clienteid = EncontrarIdCliente(cliente.ClienteId);

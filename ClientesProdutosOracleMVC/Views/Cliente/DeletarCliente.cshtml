@@ -1,0 +1,6 @@
+﻿@model Cliente
+
+<h1>Excluindo @Model.Nome</h1>
+
+<a role="button" asp-controller="Cliente" asp-action="DeleteCliente" asp-route-id="@Model.ClienteId" class="btn btn-danger">Remover cliente</a>
+<a role="button" asp-controller="Cliente" asp-action="Index" class="btn btn-primary">Voltar</a>

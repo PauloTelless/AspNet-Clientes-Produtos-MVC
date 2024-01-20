@@ -8,4 +8,5 @@ public interface ICliente
     Cliente EncontrarIdCliente(int id);
     IEnumerable<Cliente> ListarClientes();
     Cliente EditarCliente(Cliente cliente);
+    bool DeletarCliente(int id);
 }

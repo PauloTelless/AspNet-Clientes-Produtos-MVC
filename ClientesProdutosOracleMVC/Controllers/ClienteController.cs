@@ -33,6 +33,13 @@ public class ClienteController : Controller
         return View(clienteEncontrado);
     }
 
+    public IActionResult DeletarCliente(int id)
+    {
+        Cliente cliente = _clienteRepository.EncontrarIdCliente(id);
+
+        return View(cliente);
+    }
+
     public IActionResult ListarProdutos(int id)
     {
         var cliente = _clienteRepository.EncontrarIdCliente(id);
@@ -64,6 +71,13 @@ public class ClienteController : Controller
     public IActionResult PutCliente(Cliente cliente)
     {
         _clienteRepository.EditarCliente(cliente);
+
+        return RedirectToAction("Index");
+    }
+
+    public IActionResult DeleteCliente(int id)
+    {
+        _clienteRepository.DeletarCliente(id);
 
         return RedirectToAction("Index");
     }
