@@ -4,21 +4,33 @@
     <input type="hidden" asp-for="ProdutoId" />
     <div class="form-group">    
         <label for="formGroupExampleInput">Nome do produto</label>
-        <input type="text" asp-for=NomeProduto class="form-control" id="formGroupExampleInput">
+        <input type="text" asp-for=NomeProduto class="form-control" id="formGroupExampleInput" required autocomplete="off">
     </div>
     <div class="form-group">
-        <label for="formGroupExampleInput2">Categoria</label>
-        <input type="text" asp-for=Categoria class="form-control" id="formGroupExampleInput2">
+        <label>Categoria</label>
+        <select id="categoriaSelect" asp-for=Categoria class="form-select" aria-label="Default select example" required autocomplete="off">
+            <option selected >Selecione a categoria</option>
+            <option value="Notebooks/Pc">Notebooks/Pc</option>
+            <option value="Eletro/Doméstico">Eletro/Doméstico</option>
+            <option value="Mouses/Teclado">Mouses/Teclado</option>
+            <option value="Relogio Digital">Relogio Digital/ Relogios</option>
+            <option value="Acessorios/Celular">Acessorios/Celular</option>
+            <option value="Manutenção/Veículo">Manutenção/Veículo</option>
+            <option value="Acessórios para carro">Acessórios para carro</option>
+            <option value="Eletrônicos">Eletrônicos</option>
+            <option value="Outros">Outros</option>
+        </select>
     </div>
     <div class="form-group">
         <label for="formGroupExampleInput2">Preço</label>
-        <input type="text" asp-for=PrecoProduto class="form-control" id="formGroupExampleInput2">
+        <input type="text" asp-for=PrecoProduto class="form-control" id="formGroupExampleInput2" required autocomplete="off">
     </div>
     <div class="form-group">
         <label for="formGroupExampleInput2">Descrição do produto</label>
-        <input type="text" asp-for=DescricaoProduto class="form-control" id="formGroupExampleInput2">
+        <div class="input-group">
+            <textarea asp-for=DescricaoProduto placeholder="Digite uma breve descrição" required autocomplete="off" class="form-control" aria-label="With textarea"></textarea>
+        </div>
     </div>
-
     <div class="text-center">
         <div class="btn" role="button" aria-label="Basic example">
             <button type="submit" class="btn btn-success">Editar produto</button>
