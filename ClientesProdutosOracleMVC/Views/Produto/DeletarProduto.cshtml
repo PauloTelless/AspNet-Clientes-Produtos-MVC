@@ -3,4 +3,4 @@
 <h1>Excluindo @Model.NomeProduto</h1>
 
 <a role="button" asp-controller="Produto" asp-action="DeleteProduto" asp-route-id="@Model.ProdutoId" class="btn btn-danger">Remover produto</a>
-<a role="button" asp-controller="Cliente" asp-action="Index" class="btn btn-primary">Voltar</a>
+<a role="button" asp-controller="Cliente" asp-action="ListarProdutos" asp-route-id="@Model.ClienteId" class="btn btn-primary">Voltar</a>
