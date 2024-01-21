@@ -62,7 +62,7 @@ public class ProdutoRepository : IProduto
     {
         return _context.Produtos
             .Where(x => x.ClienteId == id)
-            .ToList();
+            .ToList().OrderBy(x => x.NomeProduto);
     }
 
 }

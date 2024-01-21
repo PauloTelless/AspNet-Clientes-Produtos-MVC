@@ -16,7 +16,7 @@ public class ClienteController : Controller
     }
     public IActionResult Index()
     {
-        var clientes = _clienteRepository.ListarClientes();
+        var clientes = _clienteRepository.ListarClientes().OrderBy(x => x.Nome);
 
         return View(clientes);
     }
