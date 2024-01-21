@@ -36,11 +36,16 @@ public class ClienteRepository : ICliente
     {
         var clienteid = EncontrarIdCliente(cliente.ClienteId);
 
-        _context.Clientes.Entry(clienteid).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+        clienteid.Nome = cliente.Nome;
+        clienteid.NomeUsuario= cliente.NomeUsuario;
+        clienteid.Email = cliente.Email;
+        clienteid.Contato = cliente.Contato;
+
+        _context.Update(clienteid);
 
         _context.SaveChanges();
 
-        return cliente;
+        return clienteid;
     }
 
     public Cliente EncontrarIdCliente(int id)
