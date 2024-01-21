@@ -28,7 +28,7 @@
                         <td>@produto.NomeProduto</td>
                         <td>@produto.Categoria</td>
                         <td>@produto.PrecoProduto.ToString("C")</td>
-                        <td class="">@produto.DescricaoProduto</td>
+                        <td><a role="button" asp-controller="Produto" asp-action="VerDescricao" asp-route-id="@produto.ProdutoId" style="text-decoration:none; color:black" >Ver descrição</a></td>
                         <td>
                             <a role="button" asp-controller="Produto" asp-action="EditarProduto" asp-route-id="@produto.ProdutoId" class="btn btn-primary">Editar</a>
                             <a role="button" asp-controller="Produto" asp-action="DeletarProduto" asp-route-id="@produto.ProdutoId" class="btn btn-danger">Excluir</a>

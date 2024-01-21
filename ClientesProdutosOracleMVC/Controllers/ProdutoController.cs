@@ -24,6 +24,13 @@ public class ProdutoController : Controller
         return View();
     }
 
+    public IActionResult VerDescricao(int id)
+    {
+        var produto = _produtoRepositorio.EncontradIdProduto(id);
+
+        return View(produto);
+    }
+
     public IActionResult EditarProduto(int id)
     {
         var produto = _produtoRepositorio.EncontradIdProduto(id);
